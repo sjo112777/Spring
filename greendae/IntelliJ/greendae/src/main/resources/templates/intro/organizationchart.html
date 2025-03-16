@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/greendae/css/layout/organizationchart.css">
+    <link rel="stylesheet" href="/greendae/css/layout/layout.css">
+    <title>조직도</title>
+   
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:replace="~{inc/_header}"></th:block>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/greendae/images/ico-home.png" alt="HOME">
+                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        대학소개   
+                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">조직도</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:replace="~{inc/intro/sidebar}"></th:block>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>조직도</p>
+                    </div>
+                    <div class="main_content_detail">
+                        <div>
+                            <img src="/greendae/images/organization.PNG" alt="조직도">
+                        </div>                    
+                        
+                    </div>
+                </article>
+        </main>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <th:block th:replace="~{inc/_footer}"></th:block>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>
