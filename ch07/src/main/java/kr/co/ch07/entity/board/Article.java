@@ -42,6 +42,11 @@ public class Article {
          - 1:1, N:1은 즉시로딩(Eager) 전략
          - 성능 문제로 즉시 로딩 대신 Lazy 전략 권장
 
+        추가 연구과제
+         - N+1 문제 이해하기
+         - 고아 객체(orphan) 문제 이해하기
+
+
      */
 
     @ManyToOne(fetch = FetchType.LAZY)
