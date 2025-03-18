@@ -13,6 +13,7 @@ public class User1DTO {
     private String name;
     private String hp;
     private int age;
+    private String email;
 
     // Entity 변환 메서드 정의
     public User1 toEntity(){
