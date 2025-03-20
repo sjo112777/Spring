@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>user1::register</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+        
+            document.formUser.onsubmit = async function(e){
+                e.preventDefault();
+                
+                const uid = this.uid.value;
+                const name = this.name.value;
+                const hp = this.hp.value;
+                const age = this.age.value;
+
+                const jsonData = {
+                    "uid": uid,
+                    "name": name,
+                    "hp": hp,
+                    "age": age
+                }
+
+                const response = await fetch('http://localhost:8080/ch09/user1', {
+                                            method: 'POST',
+                                            headers: {'Content-Type': 'application/json'},
+                                            body: JSON.stringify(jsonData)
+                                        });
+
+                const data = await response.json();
+
+                console.log(data);
+                if(data){
+                    alert(data.name + '을 등록 했습니다.');
+
+                    location.href = './list.html';
+                }   
+            }
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+<h3>user1 등록</h3>
+<a href="./list.html">목록이동</a>
+
+<form name="formUser" method="post">
+    <table border="1">
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="uid" placeholder="아이디 입력"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="name" placeholder="이름 입력"></td>
+        </tr>
+        <tr>
+            <td>휴대폰</td>
+            <td><input type="text" name="hp" placeholder="휴대폰 입력"></td>
+        </tr>
+        <tr>
+            <td>나이</td>
+            <td><input type="number" name="age" placeholder="나이 입력"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <input type="submit" value="등록하기">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

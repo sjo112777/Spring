@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user1::list</title>
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+
+            const table = document.getElementsByTagName('table')[0];
+            
+            // 목록 데이터 요청하기
+            fetch('http://localhost:8080/ch09/user1')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+
+                    for(const user of data){
+
+                        const tr = `<tr>
+                                        <td>${user.uid}</td>
+                                        <td>${user.name}</td>
+                                        <td>${user.hp}</td>
+                                        <td>${user.age}</td>                            
+                                        <td>
+                                            <a href='./modify.html?uid=${user.uid}' class='modify'>수정</a>
+                                            <a href='#' class='delete' data-uid='${user.uid}'>삭제</a>
+                                        </td>
+                                    </tr>`;
+
+                        table.insertAdjacentHTML('beforeend', tr);
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+
+            // 데이터 삭제하기(동적 태그 이벤트 처리)
+            document.addEventListener('click', async function(e){
+                
+
+                if(e.target.classList == 'delete'){
+                    e.preventDefault();
+
+                    const tr = e.target.closest('tr');
+                    
+                    const uid = e.target.dataset.uid;
+                    //alert(uid);
+                    const response = await fetch(`http://localhost:8080/ch09/user1/${uid}`, {method: 'DELETE'});
+
+                    if(response.ok){
+                        const data = response;
+                        console.log(data);
+
+                        // 동적 삭제
+                        tr.remove();
+
+                    }
+                }
+
+                
+
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <h3>user1 목록</h3>
+
+    <a href="./register.html">등록</a>
+    <table border="1">
+        <tr>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>휴대폰</th>
+            <th>나이</th>
+            <th>관리</th>
+        </tr>
+
+    </table>
+
+
+</body>
+</html>
