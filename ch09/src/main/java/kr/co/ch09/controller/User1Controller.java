@@ -56,7 +56,9 @@ public class User1Controller {
     }
 
     @PutMapping("/user1")
-    public ResponseEntity<User1DTO> modify(User1DTO user1DTO){
+    public ResponseEntity<User1DTO> modify(@RequestBody User1DTO user1DTO){
+
+        log.info("user1DTO : {}", user1DTO);
 
         User1DTO modifiedUser1 = user1Service.modify(user1DTO);
 
