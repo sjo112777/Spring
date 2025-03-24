@@ -43,6 +43,7 @@ public class Article {
          - 성능 문제로 즉시 로딩 대신 Lazy 전략 권장
 
         추가 연구과제
+         - 영속성 전이(cascade) 이해하기
          - N+1 문제 이해하기
          - 고아 객체(orphan) 문제 이해하기
 
