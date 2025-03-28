@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>샘플</title>
-    <link rel="stylesheet" href="/greendae/css/layout/layout.css">
-    <link rel="stylesheet" href="/greendae/css/academics/graduation.css">
+    <link rel="stylesheet" th:href="@{/css/layout/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/academic/graduation.css}">
 </head>
 <body>
     <div id="wrapper">
         <!-- 헤더 시작작-->
-        <th:block th:replace="~{inc/_header}"></th:block>
-        <!-- 헤더 끝-->
+        <th:block th:include="/inc/_header.html"/>
         <!-- 메인 시작작-->
         <main>
             <div class="background">
                 <div>
                     <span style="margin-top: 10px;">
-                        <img src="/greendae/images/ico-home.png" alt="HOME">
-                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
                         학사안내   
-                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        <img src="/images/bg-path-arrow.png" alt=">">
                         <span style="color: #071F4B;">수료 및 졸업</span>
                     </span>
                 </div>
             </div>
             <section class="content">
                 <!-- 왼쪽 사이드바 -->
-                <th:block th:replace="~{inc/academic/sidebar}"></th:block>
+                <th:block th:include="/inc/academic/sidebar.html"/>
                 <!-- 오른쪽 글 -->
                 <article class="main_content">
                     <div class="main_title">
@@ -170,9 +169,7 @@
             </section>
         </main>
         <!-- 메인 끝-->
-        <!-- 푸터 시작작-->
-        <th:block th:replace="~{inc/_footer}"></th:block>
-        <!-- 푸터 끝-->
+        <th:block th:include="/inc/_footer.html"/>
     </div>
 </body>
 </html>

@@ -5,27 +5,27 @@
 /* 폰트 설정*/
 @font-face {
     font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
-    src: url('/greendae/font/NotoSansKR-Light.woff2') format('woff2'),
-         url('/greendae/font/NotoSansKR-Light.woff') format('woff'),
-         url('/greendae/font/NotoSansKR-Light.otf') format('opentype');
+    src: url('/font/NotoSansKR-Light.woff2') format('woff2'),
+         url('/font/NotoSansKR-Light.woff') format('woff'),
+         url('/font/NotoSansKR-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
-    src: url('/greendae/font/NotoSansKR-Regular.woff2') format('woff2'),
-         url('/greendae/font/NotoSansKR-Regular.woff') format('woff'),
-         url('/greendae/font/NotoSansKR-Regular.otf') format('opentype');
+    src: url('/font/NotoSansKR-Regular.woff2') format('woff2'),
+         url('/font/NotoSansKR-Regular.woff') format('woff'),
+         url('/font/NotoSansKR-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
-    src: url('/greendae/font/NotoSansKR-Medium.woff2') format('woff2'),
-         url('/greendae/font/NotoSansKR-Medium.woff') format('woff'),
-         url('/greendae/font/NotoSansKR-Medium.otf') format('opentype');
+    src: url('/font/NotoSansKR-Medium.woff2') format('woff2'),
+         url('/font/NotoSansKR-Medium.woff') format('woff'),
+         url('/font/NotoSansKR-Medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
@@ -84,9 +84,10 @@ header > div > div > p{
     margin-top: 2px;
 } 
 
-header > div > div > p > a{
-    color: white;  
+header > div > div > p > a {
+    color: white;
     margin-left: 10px;
+    font-size: 12px;
 }
 
 header > div:nth-child(2) img{
@@ -111,7 +112,7 @@ header > div:nth-child(2) > div > nav a{
     display: block;
     width: 100%;
     height: 100%;
-    text-align: right;
+    text-align: center;
     font-size: 16px;
     line-height: 21px;
     font-weight: 500;

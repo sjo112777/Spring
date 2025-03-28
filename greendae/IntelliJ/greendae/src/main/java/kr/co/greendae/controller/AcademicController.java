@@ -1,15 +1,8 @@
 package kr.co.greendae.controller;
 
-import kr.co.greendae.dto.EventDTO;
-import org.springframework.boot.configurationprocessor.json.JSONArray;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 // 학사안내
 @Controller
@@ -18,7 +11,9 @@ public class AcademicController {
 
     // 학사일정
     @GetMapping("/schedule")
-    public String schedule(){return "/academic/schedule";}
+    public String schedule(){
+        return "/academic/schedule";
+    }
 
     // 수강신청
     @GetMapping("/registration")
@@ -36,5 +31,17 @@ public class AcademicController {
     @GetMapping("/grade")
     public String score(){
         return "/academic/grade";
+    }
+
+    // 공지사항
+    @GetMapping("/notice")
+    public String notice(){
+        return "/academic/notice";
+    }
+
+    // 자주묻는질문
+    @GetMapping("/faq")
+    public String faq(){
+        return "/academic/faq";
     }
 }
